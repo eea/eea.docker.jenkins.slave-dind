@@ -1,4 +1,4 @@
-# Jenkins Slave with Docker Engine and Docker Compose inside  (Jenkins Swarm Plugin)
+# Jenkins Slave with Docker Engine and Docker Compose inside (Jenkins Swarm Plugin)
 
 Docker images for Jenkins Slave with Docker Engine and Docker Compose inside.
 
