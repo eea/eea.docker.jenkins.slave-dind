@@ -2,6 +2,8 @@
 
 Docker images for Jenkins Slave with Docker Engine and Docker Compose inside.
 
+Works best in combination with [eeacms/jenkins-master](https://hub.docker.com/r/eeacms/jenkins-master/)
+
 This image is generic, thus you can obviously re-use it within your non-related EEA projects.
 
 ## Supported tags and respective Dockerfile links
@@ -50,6 +52,26 @@ Start Jenkins slave:
              eeacms/jenkins-slave-dind:1.9
 
 See base image [eeacms/jenkins-slave](https://hub.docker.com/r/eeacms/jenkins-slave) for more options.
+
+## Supported environment variables
+
+* `DOCKER_HOST` Docker engine server `address:port` to be used to run Docker related jobs
+* `JENKINS_USER` jenkins user to be used to connect slaves to Jenkins master. Make sure that this user has the proper rights to connect slaves and run jenkins jobs.
+* `JENKINS_PASS` jenkins user password
+* `JAVA_OPTS` You might need to customize the JVM running Jenkins slave, typically to pass system properties or tweak heap memory settings. Use JAVA_OPTS environment variable for this purpose.
+* `JENKINS_NAME` Name of the slave
+* `JENKINS_DESCRIPTION` Description to be put on the slave
+* `JENKINS_EXECUTORS` Number of executors. Default is equal with the number of available CPUs
+* `JENKINS_LABELS` Whitespace-separated list of labels to be assigned for this slave. Multiple options are allowed.
+* `JENKINS_RETRY` Number of retries before giving up. Unlimited if not specified.
+* `JENKINS_MODE` The mode controlling how Jenkins allocates jobs to slaves. Can be either 'normal' (utilize this slave as much as possible) or 'exclusive' (leave this machine for tied jobs only). Default is normal.
+* `JENKINS_MASTER` The complete target Jenkins URL like 'http://jenkins-server'. If this option is specified, auto-discovery will be skipped
+* `JENKINS_TUNNEL` Connect to the specified host and port, instead of connecting directly to Jenkins. Useful when connection to Hudson needs to be tunneled. Can be also HOST: or :PORT, in which case the missing portion will be auto-configured like the default behavior
+* `JENKINS_TOOL_LOCATIONS` Whitespace-separated list of tool locations to be defined on this slave. A tool location is specified as 'toolName:location'
+* `JENKINS_NO_RETRY_AFTER_CONNECTED` Do not retry if a successful connection gets closed.
+* `JENKINS_AUTO_DISCOVERY_ADDRESS` Use this address for udp-based auto-discovery (default 255.255.255.255)
+* `JENKINS_DISABLE_SSL_VERIFICATION` Disables SSL verification in the HttpClient.
+* `JENKINS_OPTS` You can provide multiple parameters via this environment like: `-e JENKINS_OPTS="-labels docker -mode exclusive"`
 
 ## Copyright and license
 
