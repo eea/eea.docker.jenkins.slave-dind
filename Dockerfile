@@ -1,7 +1,7 @@
 FROM eeacms/jenkins-slave:2.0
 MAINTAINER "EEA: IDM2 A-Team" <eea-edw-a-team-alerts@googlegroups.com>
 
-ENV DOCKER_VERSION=1.9.1 \
+ENV DOCKER_VERSION=1.10.2 \
     DOCKER_COMPOSE_VERSION=1.6.2 \
     DOCKER_COMPOSE_MD5=9f56f13032b04645009aa2b3fcd889bd
 
