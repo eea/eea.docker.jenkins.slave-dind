@@ -74,6 +74,8 @@ See base image [eeacms/jenkins-slave](https://hub.docker.com/r/eeacms/jenkins-sl
 * `JENKINS_AUTO_DISCOVERY_ADDRESS` Use this address for udp-based auto-discovery (default 255.255.255.255)
 * `JENKINS_DISABLE_SSL_VERIFICATION` Disables SSL verification in the HttpClient.
 * `JENKINS_OPTS` You can provide multiple parameters via this environment like: `-e JENKINS_OPTS="-labels docker -mode exclusive"`
+* `DOCKERHUB_USER` dockerhub user to be used to push images to dockerhub. If missing, the .m2/settings.xml required for pushing images will not be created.
+* `DOCKERHUB_PASS` dockerhub user password
 
 ## Copyright and license
 
