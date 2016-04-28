@@ -6,11 +6,13 @@ Works best in combination with [eeacms/jenkins-master](https://hub.docker.com/r/
 
 This image is generic, thus you can obviously re-use it within your non-related EEA projects.
 
-## Supported tags and respective Dockerfile links
+## Supported branch and respective Dockerfile links
 
 - [`:latest`  (*Dockerfile*)](https://github.com/eea/eea.docker.jenkins.slave-dind/blob/master/Dockerfile)
 - [`:1.10` (*Dockerfile*)](https://github.com/eea/eea.docker.jenkins.slave-dind/blob/1.10/Dockerfile)
 - [`:1.9` (*Dockerfile*)](https://github.com/eea/eea.docker.jenkins.slave-dind/blob/1.9/Dockerfile)
+- [`:1.8` (*Dockerfile*)](https://github.com/eea/eea.docker.jenkins.slave-dind/blob/1.8/Dockerfile)
+- [`:1.7` (*Dockerfile*)](https://github.com/eea/eea.docker.jenkins.slave-dind/blob/1.7/Dockerfile)
 
 ## Changes
 
@@ -18,7 +20,7 @@ This image is generic, thus you can obviously re-use it within your non-related 
 
 ## Base docker image
 
-- [hub.docker.com](https://registry.hub.docker.com/u/eeacms/jenkins-slave-dind)
+- [hub.docker.com](https://hub.docker.com/r/eeacms/jenkins-slave-dind)
 
 ## Source code
 
@@ -40,16 +42,16 @@ Start Jenkins master:
 
 Start Docker engine server:
 
-    $ docker run --name=docker19 \
+    $ docker run --name=docker17 \
                  --privileged=true \
-             docker:1.9-dind
+             docker:1.7-dind
 
 Start Jenkins slave:
 
     $ docker run --name=worker \
                  --link=docker19 \
                  -e DOCKER_HOST=tcp://dind:2375 \
-             eeacms/jenkins-slave-dind:1.9
+             eeacms/jenkins-slave-dind:1.7
 
 See base image [eeacms/jenkins-slave](https://hub.docker.com/r/eeacms/jenkins-slave) for more options.
 
