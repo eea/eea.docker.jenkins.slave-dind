@@ -1,4 +1,4 @@
-FROM eeacms/jenkins-slave:2.0
+FROM eeacms/jenkins-slave:2.1
 MAINTAINER "EEA: IDM2 A-Team" <eea-edw-a-team-alerts@googlegroups.com>
 
 ENV DOCKER_VERSION=1.8.2 \
