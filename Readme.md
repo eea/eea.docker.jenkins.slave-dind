@@ -11,6 +11,8 @@ This image is generic, thus you can obviously re-use it within your non-related 
 - [`:latest`  (*Dockerfile*)](https://github.com/eea/eea.docker.jenkins.slave-dind/blob/master/Dockerfile)
 - [`:1.10` (*Dockerfile*)](https://github.com/eea/eea.docker.jenkins.slave-dind/blob/1.10/Dockerfile)
 - [`:1.9` (*Dockerfile*)](https://github.com/eea/eea.docker.jenkins.slave-dind/blob/1.9/Dockerfile)
+- [`:1.8` (*Dockerfile*)](https://github.com/eea/eea.docker.jenkins.slave-dind/blob/1.8/Dockerfile)
+- [`:1.7` (*Dockerfile*)](https://github.com/eea/eea.docker.jenkins.slave-dind/blob/1.7/Dockerfile)
 
 ## Changes
 
@@ -18,7 +20,7 @@ This image is generic, thus you can obviously re-use it within your non-related 
 
 ## Base docker image
 
-- [hub.docker.com](https://registry.hub.docker.com/u/eeacms/jenkins-slave-dind)
+- [hub.docker.com](https://hub.docker.com/r/eeacms/jenkins-slave-dind)
 
 ## Source code
 
