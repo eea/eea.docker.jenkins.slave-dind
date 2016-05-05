@@ -19,4 +19,13 @@ RUN apt-get update \
  && echo "$DOCKER_COMPOSE_MD5  /bin/docker-compose" | md5sum -c - \
  && chmod +x /bin/docker-compose
 
+RUN curl "https://bootstrap.pypa.io/get-pip.py" -o "/tmp/get-pip.py" \
+ && python /tmp/get-pip.py \
+ && pip install j2cli
+COPY ini/settings.xml.j2 /tmp/settings.xml.j2
+
 USER jenkins
+
+COPY docker-entrypoint-dind.sh /
+
+ENTRYPOINT ["/docker-entrypoint-dind.sh"]
