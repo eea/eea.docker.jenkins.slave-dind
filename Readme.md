@@ -20,7 +20,7 @@ This image is generic, thus you can obviously re-use it within your non-related 
 
 ## Base docker image
 
-- [hub.docker.com](https://registry.hub.docker.com/u/eeacms/jenkins-slave-dind)
+- [hub.docker.com](https://hub.docker.com/r/eeacms/jenkins-slave-dind)
 
 ## Source code
 
@@ -42,16 +42,16 @@ Start Jenkins master:
 
 Start Docker engine server:
 
-    $ docker run --name=docker19 \
+    $ docker run --name=docker110 \
                  --privileged=true \
-             docker:1.9-dind
+             docker:1.10-dind
 
 Start Jenkins slave:
 
     $ docker run --name=worker \
-                 --link=docker19 \
+                 --link=docker110 \
                  -e DOCKER_HOST=tcp://dind:2375 \
-             eeacms/jenkins-slave-dind:1.9
+             eeacms/jenkins-slave-dind:1.10
 
 See base image [eeacms/jenkins-slave](https://hub.docker.com/r/eeacms/jenkins-slave) for more options.
 
