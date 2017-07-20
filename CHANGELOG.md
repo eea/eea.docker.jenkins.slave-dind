@@ -1,5 +1,9 @@
 # Changelog
 
+## (2017-078-29)
+
+- Swarm Client version 3.4
+
 ## (2016-05-25)
 
 - Docker version 1.10.3
