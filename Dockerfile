@@ -22,3 +22,4 @@ COPY ini/settings.xml.j2 /tmp/settings.xml.j2
 COPY docker-entrypoint-dind.sh /
 
 ENTRYPOINT ["/docker-entrypoint-dind.sh"]
+CMD ["java", "-jar", "/bin/swarm-client.jar"]
