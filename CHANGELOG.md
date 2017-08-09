@@ -1,6 +1,11 @@
 # Changelog
 
-## (2017-078-29)
+## (2017-08-09)
+
+- Docker 1.13.1
+- Docker-Compose 1.9.0
+
+## (2017-07-29)
 
 - Swarm Client version 3.4
 
