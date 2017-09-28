@@ -53,7 +53,7 @@ Start Jenkins slave:
 
     $ docker run --name=worker \
                  --link=docker110 \
-                 -e DOCKER_HOST=tcp://dind:2375 \
+                 -e DOCKER_HOST=tcp://docker110:2375 \
              eeacms/jenkins-slave-dind:1.10
 
 See base image [eeacms/jenkins-slave](https://hub.docker.com/r/eeacms/jenkins-slave) for more options.
