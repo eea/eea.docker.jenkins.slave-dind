@@ -14,6 +14,7 @@ This image is generic, thus you can obviously re-use it within your non-related 
 - [`:1.9-3.4` (*Dockerfile*)](https://github.com/eea/eea.docker.jenkins.slave-dind/blob/1.9-3.4/Dockerfile) - Docker 1.9, Docker-Compose 1.6.2, Swarm Client 3.4
 - [`:1.8-3.4` (*Dockerfile*)](https://github.com/eea/eea.docker.jenkins.slave-dind/blob/1.8-3.4/Dockerfile) - Docker 1.8, Docker-Compose 1.6.2, Swarm Client 3.4
 - [`:1.7-3.4` (*Dockerfile*)](https://github.com/eea/eea.docker.jenkins.slave-dind/blob/1.7-3.4/Dockerfile) - Docker 1.7, Docker-Compose 1.6.2, Swarm Client 3.4
+- [`:1.7-3.6` (*Dockerfile*)](https://github.com/eea/eea.docker.jenkins.slave-dind/blob/1.7-3.6/Dockerfile) - Docker 1.7, Docker-Compose 1.6.2, Swarm Client 3.6
 
 See [older versions](https://github.com/eea/eea.docker.jenkins.slave-dind/releases)
 
