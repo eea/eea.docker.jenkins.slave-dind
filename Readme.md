@@ -9,7 +9,8 @@ This image is generic, thus you can obviously re-use it within your non-related 
 ## Supported tags and respective Dockerfile links
 
 - [`:latest`  (*Dockerfile*)](https://github.com/eea/eea.docker.jenkins.slave-dind/blob/master/Dockerfile)
-- [`:1.13-3.6` (*Dockerfile*)](https://github.com/eea/eea.docker.jenkins.slave-dind/blob/1.13-3.4/Dockerfile) - Docker 1.13, Docker-Compose 1.9.0, Swarm Client 3.6
+- [`:1.13-3.6.1` (*Dockerfile*)](https://github.com/eea/eea.docker.jenkins.slave-dind/blob/1.13-3.6.1/Dockerfile) - Docker 1.13, Docker-Compose 1.9.0, Swarm Client 3.6
+- [`:1.13-3.6` (*Dockerfile*)](https://github.com/eea/eea.docker.jenkins.slave-dind/blob/1.13-3.6/Dockerfile) - Docker 1.13, Docker-Compose 1.9.0, Swarm Client 3.6
 - [`:1.13-3.4` (*Dockerfile*)](https://github.com/eea/eea.docker.jenkins.slave-dind/blob/1.13-3.4/Dockerfile) - Docker 1.13, Docker-Compose 1.9.0, Swarm Client 3.4
 - [`:1.10-3.4` (*Dockerfile*)](https://github.com/eea/eea.docker.jenkins.slave-dind/blob/1.10-3.4/Dockerfile) - Docker 1.10, Docker-Compose 1.6.2, Swarm Client 3.4
 - [`:1.9-3.4` (*Dockerfile*)](https://github.com/eea/eea.docker.jenkins.slave-dind/blob/1.9-3.4/Dockerfile) - Docker 1.9, Docker-Compose 1.6.2, Swarm Client 3.4
