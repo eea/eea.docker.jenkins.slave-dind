@@ -2,7 +2,7 @@ FROM eeacms/jenkins-slave:3.6.1
 
 ENV DOCKER_VERSION=1.13.1 \
     DOCKER_COMPOSE_VERSION=1.17.0 \
-    DOCKER_COMPOSE_MD5=bfd32190d08b2d70ec86368774f699f7
+    DOCKER_COMPOSE_MD5=9eeb33c3a8fc2ad7c1a6458e7e51403d
 
 RUN apt-get update \
  && apt-get install -y --no-install-recommends apt-transport-https ca-certificates \

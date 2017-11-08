@@ -5,6 +5,8 @@
 
 - Add `-v /var/run/docker.sock:/var/run/docker.sock` support
 
+- Docker-Compose 1.17.0
+
 ## 3.6.1 (2017-10-30)
 
 - Removed @ from jenkins name
