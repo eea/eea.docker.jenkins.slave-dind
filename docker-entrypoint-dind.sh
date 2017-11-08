@@ -8,4 +8,8 @@ if [ ! -z "$DOCKERHUB_USER" ] && [ ! -z "$DOCKERHUB_PASS" ]; then
   gosu jenkins j2 "$SETTINGS_TPL" > $SETTINGS_FILE
 fi
 
+if [ -e /var/run/docker.sock ]; then
+  setfacl -m u:1000:rw /var/run/docker.sock
+fi
+
 exec /docker-entrypoint.sh "$@"

@@ -1,9 +1,13 @@
 # Changelog
 
 
+## 3.6.2 (2017-11-08)
+
+- Add `-v /var/run/docker.sock:/var/run/docker.sock` support
+
 ## 3.6.1 (2017-10-30)
 
-- Removed @ from jenkins name 
+- Removed @ from jenkins name
 
 ## (2017-10-23)
 

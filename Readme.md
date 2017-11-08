@@ -9,13 +9,7 @@ This image is generic, thus you can obviously re-use it within your non-related 
 ## Supported tags and respective Dockerfile links
 
 - [`:latest`  (*Dockerfile*)](https://github.com/eea/eea.docker.jenkins.slave-dind/blob/master/Dockerfile)
-- [`:1.13-3.6.1` (*Dockerfile*)](https://github.com/eea/eea.docker.jenkins.slave-dind/blob/1.13-3.6.1/Dockerfile) - Docker 1.13, Docker-Compose 1.9.0, Swarm Client 3.6
-- [`:1.13-3.6` (*Dockerfile*)](https://github.com/eea/eea.docker.jenkins.slave-dind/blob/1.13-3.6/Dockerfile) - Docker 1.13, Docker-Compose 1.9.0, Swarm Client 3.6
-- [`:1.13-3.4` (*Dockerfile*)](https://github.com/eea/eea.docker.jenkins.slave-dind/blob/1.13-3.4/Dockerfile) - Docker 1.13, Docker-Compose 1.9.0, Swarm Client 3.4
-- [`:1.10-3.4` (*Dockerfile*)](https://github.com/eea/eea.docker.jenkins.slave-dind/blob/1.10-3.4/Dockerfile) - Docker 1.10, Docker-Compose 1.6.2, Swarm Client 3.4
-- [`:1.9-3.4` (*Dockerfile*)](https://github.com/eea/eea.docker.jenkins.slave-dind/blob/1.9-3.4/Dockerfile) - Docker 1.9, Docker-Compose 1.6.2, Swarm Client 3.4
-- [`:1.8-3.4` (*Dockerfile*)](https://github.com/eea/eea.docker.jenkins.slave-dind/blob/1.8-3.4/Dockerfile) - Docker 1.8, Docker-Compose 1.6.2, Swarm Client 3.4
-- [`:1.7-3.4` (*Dockerfile*)](https://github.com/eea/eea.docker.jenkins.slave-dind/blob/1.7-3.4/Dockerfile) - Docker 1.7, Docker-Compose 1.6.2, Swarm Client 3.4
+- [`:1.13-3.6.2` (*Dockerfile*)](https://github.com/eea/eea.docker.jenkins.slave-dind/blob/1.13-3.6.2/Dockerfile) - Docker 1.13.1, Docker-Compose 1.17.0, Swarm Client 3.6
 
 See [older versions](https://github.com/eea/eea.docker.jenkins.slave-dind/releases)
 
@@ -47,16 +41,23 @@ Start Jenkins master:
 
 Start Docker engine server:
 
-    $ docker run --name=docker110 \
+    $ docker run --name=docker13 \
                  --privileged=true \
-             docker:1.10-dind
+             docker:1.13-dind
 
 Start Jenkins slave:
 
     $ docker run --name=worker \
-                 --link=docker110 \
-                 -e DOCKER_HOST=tcp://docker110:2375 \
-             eeacms/jenkins-slave-dind:1.10
+                 --link=docker13 \
+                 -e DOCKER_HOST=tcp://docker13:2375 \
+             eeacms/jenkins-slave-dind:1.13
+
+
+You can also bind `/var/run/docker.sock` from host for more stable Jenkins Docker-in-Docker slave:
+
+    $ docker run --name=worker \
+                 -v /var/run/docker.sock:/var/run/docker.sock \
+             eeacms/jenkins-slave-dind:1.13
 
 See base image [eeacms/jenkins-slave](https://hub.docker.com/r/eeacms/jenkins-slave) for more options.
 
