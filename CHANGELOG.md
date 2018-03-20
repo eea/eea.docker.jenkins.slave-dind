@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.13-3.9 (2018-03-20)
+
+- Swarm Client version 3.9
+- Docker-Compose 1.20.0
+- Added Clair-scanner v8 (https://github.com/arminc/clair-scanner)
 
 ## 3.6.2 (2017-11-08)
 

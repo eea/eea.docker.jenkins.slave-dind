@@ -1,8 +1,9 @@
-FROM eeacms/jenkins-slave:3.6.1
+FROM eeacms/jenkins-slave:3.9
 
 ENV DOCKER_VERSION=1.13.1 \
-    DOCKER_COMPOSE_VERSION=1.17.0 \
-    DOCKER_COMPOSE_MD5=9eeb33c3a8fc2ad7c1a6458e7e51403d
+    DOCKER_COMPOSE_VERSION=1.20.0 \
+    DOCKER_COMPOSE_MD5=80b6349a390ef3a58250f892fb0cb3c1 \
+    CLAIR_SCANNER_VERSION=v8
 
 RUN apt-get update \
  && apt-get install -y --no-install-recommends apt-transport-https ca-certificates \
@@ -16,7 +17,9 @@ RUN apt-get update \
  && chmod +x /bin/docker-compose \
  && curl "https://bootstrap.pypa.io/get-pip.py" -o "/tmp/get-pip.py" \
  && python /tmp/get-pip.py \
- && pip install j2cli
+ && pip install j2cli \
+ && curl -L -o /usr/bin/clair-scanner https://github.com/arminc/clair-scanner/releases/download/$CLAIR_SCANNER_VERSION/clair-scanner_linux_amd64 \
+ && chmod 777 /usr/bin/clair-scanner
 
 COPY ini/settings.xml.j2 /tmp/settings.xml.j2
 COPY docker-entrypoint-dind.sh /

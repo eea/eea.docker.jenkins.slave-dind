@@ -9,6 +9,7 @@ This image is generic, thus you can obviously re-use it within your non-related 
 ## Supported tags and respective Dockerfile links
 
 - [`:latest`  (*Dockerfile*)](https://github.com/eea/eea.docker.jenkins.slave-dind/blob/master/Dockerfile)
+- [`:1.13-3.9` (*Dockerfile*)](https://github.com/eea/eea.docker.jenkins.slave-dind/blob/1.13-3.9/Dockerfile) - Docker 1.13.1, Docker-Compose 1.20.0, Swarm Client 3.9
 - [`:1.13-3.6.2` (*Dockerfile*)](https://github.com/eea/eea.docker.jenkins.slave-dind/blob/1.13-3.6.2/Dockerfile) - Docker 1.13.1, Docker-Compose 1.17.0, Swarm Client 3.6
 
 See [older versions](https://github.com/eea/eea.docker.jenkins.slave-dind/releases)
@@ -60,6 +61,21 @@ You can also bind `/var/run/docker.sock` from host for more stable Jenkins Docke
              eeacms/jenkins-slave-dind:1.13
 
 See base image [eeacms/jenkins-slave](https://hub.docker.com/r/eeacms/jenkins-slave) for more options.
+
+## Clair-scanner usage
+
+[clair-scanner](https://github.com/arminc/clair-scanner) is a docker containers vulnerability scanner. It is integrated with a standalone [Clair server](https://github.com/coreos/clair). Before scanning, you need first to pull the image locally: 
+    
+    $ docker pull <IMAGE>
+
+To use it, 
+
+    $ clair-scanner --ip <IP_VISIBLE_FROM_CLAIR> -t='High' --clair="http://<CLAIR_HOST>:<CLAIR_PORT>"  --all=false  <IMAGE>
+
+or with a local [whitelist file](https://github.com/arminc/clair-scanner#example-whitelist-yaml-file)
+
+     
+    $ clair-scanner --ip <IP_VISIBLE_FROM_CLAIR> -t='High' --whitelist=<WHITELIST_FILE> --clair="http://<CLAIR_HOST>:<CLAIR_PORT>"  --all=false  <IMAGE>
 
 ## Supported environment variables
 
