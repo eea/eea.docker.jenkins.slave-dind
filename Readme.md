@@ -62,20 +62,6 @@ You can also bind `/var/run/docker.sock` from host for more stable Jenkins Docke
 
 See base image [eeacms/jenkins-slave](https://hub.docker.com/r/eeacms/jenkins-slave) for more options.
 
-## Clair-scanner usage
-
-[clair-scanner](https://github.com/arminc/clair-scanner) is a docker containers vulnerability scanner. It is integrated with a standalone [Clair server](https://github.com/coreos/clair). Before scanning, you need first to pull the image locally: 
-    
-    $ docker pull <IMAGE>
-
-To use it, 
-
-    $ clair-scanner --ip <IP_VISIBLE_FROM_CLAIR> -t='High' --clair="http://<CLAIR_HOST>:<CLAIR_PORT>"  --all=false  <IMAGE>
-
-or with a local [whitelist file](https://github.com/arminc/clair-scanner#example-whitelist-yaml-file)
-
-     
-    $ clair-scanner --ip <IP_VISIBLE_FROM_CLAIR> -t='High' --whitelist=<WHITELIST_FILE> --clair="http://<CLAIR_HOST>:<CLAIR_PORT>"  --all=false  <IMAGE>
 
 ## Supported environment variables
 
