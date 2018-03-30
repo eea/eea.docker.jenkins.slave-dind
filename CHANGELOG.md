@@ -1,5 +1,9 @@
 # Changelog
 
+## 17.06.2-3.9 (2018-03-30)
+
+- Docker 17.06.2-ce
+
 ## 1.13-3.9 (2018-03-20)
 
 - Swarm Client version 3.9
