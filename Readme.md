@@ -78,6 +78,17 @@ or with a local [whitelist file](https://github.com/arminc/clair-scanner#example
      
     $ clair-scanner --ip <IP_VISIBLE_FROM_CLAIR> -t='High' --whitelist=<WHITELIST_FILE> --clair="http://<CLAIR_HOST>:<CLAIR_PORT>"  --all=false  <IMAGE>
 
+### Rancher catalog scanner
+
+/scan_catalog_entry.sh is a script that should be used to make sure that all the images from a rancher catalog don't have any Critical or higher vulnerabilities. You can give it an exclude parameter to not scan the images you plan to upgrade in the catalog.
+ 
+    $ /scan_catalog_entry.sh <CATALOG_PATH> <REGEX_TO_EXCLUDE>
+
+Example:
+
+    $ /scan_catalog_entry.sh templates/www-eea  "eeacms/www-devel:|eeacms/apache-eea-www:"
+
+
 ## Supported environment variables
 
 * `DOCKER_HOST` Docker engine server `address:port` to be used to run Docker related jobs

@@ -1,8 +1,10 @@
 # Changelog
 
-## 17.06.2-3.9 (2018-03-30)
+## 17.06.2-3.12 (2018-04-06)
 
+- Swarm Client version 3.12
 - Docker 17.06.2-ce
+- Added script to scan latest rancher catalog entry
 
 ## 1.13-3.9 (2018-03-20)
 
