@@ -1,5 +1,10 @@
 # Changelog
 
+
+## 17.06-3.13 (2018-04-06)
+
+- Updated script to scan latest rancher catalog entry
+
 ## 17.06.2-3.12 (2018-04-06)
 
 - Swarm Client version 3.12

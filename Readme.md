@@ -9,7 +9,7 @@ This image is generic, thus you can obviously re-use it within your non-related 
 ## Supported tags and respective Dockerfile links
 
 - [`:latest`  (*Dockerfile*)](https://github.com/eea/eea.docker.jenkins.slave-dind/blob/master/Dockerfile)
-- [`:17.06.2-3.12` (*Dockerfile*)](https://github.com/eea/eea.docker.jenkins.slave-dind/blob/17.06.2-3.12/Dockerfile) - Docker 17.06.2-ce, Docker-Compose 1.20.0, Swarm Client 3.12
+- [`:17.06-3.13` (*Dockerfile*)](https://github.com/eea/eea.docker.jenkins.slave-dind/blob/17.06.2-3.12/Dockerfile) - Docker 17.06.2-ce, Docker-Compose 1.20.0, Swarm Client 3.12
 - [`:1.13-3.9` (*Dockerfile*)](https://github.com/eea/eea.docker.jenkins.slave-dind/blob/1.13-3.9/Dockerfile) - Docker 1.13.1, Docker-Compose 1.20.0, Swarm Client 3.9
 - [`:1.13-3.6.2` (*Dockerfile*)](https://github.com/eea/eea.docker.jenkins.slave-dind/blob/1.13-3.6.2/Dockerfile) - Docker 1.13.1, Docker-Compose 1.17.0, Swarm Client 3.6
 
@@ -80,7 +80,7 @@ or with a local [whitelist file](https://github.com/arminc/clair-scanner#example
 
 ### Rancher catalog scanner
 
-/scan_catalog_entry.sh is a script that should be used to make sure that all the images from a rancher catalog don't have any Critical or higher vulnerabilities. You can give it an exclude parameter to not scan the images you plan to upgrade in the catalog.
+/scan_catalog_entry.sh is a script that should be used to make sure that all the images from a rancher catalog don't have any Critical or higher vulnerabilities. You can give it an exclude parameter to not scan the images you plan to upgrade in the catalog. The default Clair url is http:/clair:6060. If you want to use another url, you can set it with environment variable CLAIR_URL
  
     $ /scan_catalog_entry.sh <CATALOG_PATH> <REGEX_TO_EXCLUDE>
 
