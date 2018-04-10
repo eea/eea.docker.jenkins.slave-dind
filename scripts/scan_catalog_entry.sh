@@ -5,6 +5,7 @@ set -e
 GIT_ORG=${GIT_ORG:-"eea"}
 RANCHER_CATALOG_GITNAME=${RANCHER_CATALOG_PATH:-"eea.rancher.catalog"}
 
+CLAIR_URL=${CLAIR_URL:-"http://clair:6060"}
 
 RANCHER_CATALOG_PATH=${RANCHER_CATALOG_PATH:-$1}
 EXCLUDE_IMAGES=${EXCLUDE_IMAGES:-$2}
@@ -55,7 +56,7 @@ rm -rf  $RANCHER_CATALOG_GITNAME
 
 for image in $all_images; do
   docker pull $image
-  TMPDIR=`pwd` clair-scanner --ip=`hostname` --clair=https://clair.eea.europa.eu -t=Critical --all=false  $image
+  TMPDIR=`pwd` clair-scanner --ip=`hostname` --clair=$CLAIR_URL -t=Critical --all=false  $image
   docker rmi $image
 done
 
