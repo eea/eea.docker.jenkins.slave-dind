@@ -1,5 +1,6 @@
 #!/bin/bash
 
+set -e
 
 GIT_ORG=${GIT_ORG:-"eea"}
 RANCHER_CATALOG_GITNAME=${RANCHER_CATALOG_PATH:-"eea.rancher.catalog"}
