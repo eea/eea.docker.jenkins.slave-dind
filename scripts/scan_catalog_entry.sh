@@ -1,6 +1,5 @@
 #!/bin/bash
 
-set -e
 
 GIT_ORG=${GIT_ORG:-"eea"}
 RANCHER_CATALOG_GITNAME=${RANCHER_CATALOG_PATH:-"eea.rancher.catalog"}
@@ -57,7 +56,7 @@ rm -rf  $RANCHER_CATALOG_GITNAME
 for image in $all_images; do
   docker pull $image
   TMPDIR=`pwd` clair-scanner --ip=`hostname` --clair=$CLAIR_URL -t=Critical --all=false  $image
-  docker rmi $image
+  docker rmi $image || true
 done
 
 echo "Finished scanning"
