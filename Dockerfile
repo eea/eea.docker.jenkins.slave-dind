@@ -10,7 +10,7 @@ RUN apt-get update \
  && curl -fsSL https://download.docker.com/linux/debian/gpg | apt-key add - \
  && add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/debian $(lsb_release -cs) stable" \
  && apt-get update \
- && apt-get install -y --no-install-recommends docker-ce=$DOCKER_VERSION* \
+ && apt-get install -y --no-install-recommends docker-engine=$DOCKER_VERSION* \
  && rm -rf /var/lib/apt/lists/* \
  && curl -o /bin/docker-compose -SL https://github.com/docker/compose/releases/download/$DOCKER_COMPOSE_VERSION/docker-compose-Linux-x86_64 \
  && echo "$DOCKER_COMPOSE_MD5  /bin/docker-compose" | md5sum -c - \
