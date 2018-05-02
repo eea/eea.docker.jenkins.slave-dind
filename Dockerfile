@@ -3,7 +3,7 @@ FROM eeacms/jenkins-slave:3.12
 ENV DOCKER_VERSION=1.12.6 \
     DOCKER_COMPOSE_VERSION=1.20.0 \
     DOCKER_COMPOSE_MD5=80b6349a390ef3a58250f892fb0cb3c1 \
-    CLAIR_SCANNER_VERSION=v8
+    CLAIR_SCANNER_VERSION=v7
 
 RUN apt-get update \
  && apt-get install -y --no-install-recommends apt-transport-https ca-certificates software-properties-common \
