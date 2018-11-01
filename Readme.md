@@ -9,10 +9,7 @@ This image is generic, thus you can obviously re-use it within your non-related 
 ## Supported tags and respective Dockerfile links
 
 - [`:latest`  (*Dockerfile*)](https://github.com/eea/eea.docker.jenkins.slave-dind/blob/master/Dockerfile)
-- [`:17.06-3.14` (*Dockerfile*)](https://github.com/eea/eea.docker.jenkins.slave-dind/blob/17.06.2-3.12/Dockerfile) - Docker 17.06.2-ce, Docker-Compose 1.20.0, Swarm Client 3.14
-- [`:17.06-3.13` (*Dockerfile*)](https://github.com/eea/eea.docker.jenkins.slave-dind/blob/17.06.2-3.12/Dockerfile) - Docker 17.06.2-ce, Docker-Compose 1.20.0, Swarm Client 3.12
-- [`:1.13-3.9` (*Dockerfile*)](https://github.com/eea/eea.docker.jenkins.slave-dind/blob/1.13-3.9/Dockerfile) - Docker 1.13.1, Docker-Compose 1.20.0, Swarm Client 3.9
-- [`:1.13-3.6.2` (*Dockerfile*)](https://github.com/eea/eea.docker.jenkins.slave-dind/blob/1.13-3.6.2/Dockerfile) - Docker 1.13.1, Docker-Compose 1.17.0, Swarm Client 3.6
+- [`:17.12-3.14` (*Dockerfile*)](https://github.com/eea/eea.docker.jenkins.slave-dind/blob/17.12-3.14/Dockerfile) - Docker 17.12.1-ce, Docker-Compose 1.23.0, Swarm Client 3.14
 
 See [older versions](https://github.com/eea/eea.docker.jenkins.slave-dind/releases)
 
@@ -66,23 +63,23 @@ See base image [eeacms/jenkins-slave](https://hub.docker.com/r/eeacms/jenkins-sl
 
 ## Clair-scanner usage
 
-[clair-scanner](https://github.com/arminc/clair-scanner) is a docker containers vulnerability scanner. It is integrated with a standalone [Clair server](https://github.com/coreos/clair). Before scanning, you need first to pull the image locally: 
-    
+[clair-scanner](https://github.com/arminc/clair-scanner) is a docker containers vulnerability scanner. It is integrated with a standalone [Clair server](https://github.com/coreos/clair). Before scanning, you need first to pull the image locally:
+
     $ docker pull <IMAGE>
 
-To use it, 
+To use it,
 
     $ clair-scanner --ip <IP_VISIBLE_FROM_CLAIR> -t='High' --clair="http://<CLAIR_HOST>:<CLAIR_PORT>"  --all=false  <IMAGE>
 
 or with a local [whitelist file](https://github.com/arminc/clair-scanner#example-whitelist-yaml-file)
 
-     
+
     $ clair-scanner --ip <IP_VISIBLE_FROM_CLAIR> -t='High' --whitelist=<WHITELIST_FILE> --clair="http://<CLAIR_HOST>:<CLAIR_PORT>"  --all=false  <IMAGE>
 
 ### Rancher catalog scanner
 
 /scan_catalog_entry.sh is a script that should be used to make sure that all the images from a rancher catalog don't have any Critical or higher vulnerabilities. You can give it an exclude parameter to not scan the images you plan to upgrade in the catalog. The default Clair url is http:/clair:6060. If you want to use another url, you can set it with environment variable CLAIR_URL
- 
+
     $ /scan_catalog_entry.sh <CATALOG_PATH> <REGEX_TO_EXCLUDE>
 
 Example:

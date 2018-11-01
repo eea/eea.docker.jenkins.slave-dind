@@ -1,6 +1,12 @@
 # Changelog
 
 
+## 17.12-3.14 (2018-11-01)
+
+- Fix docker.sock permissions by installing setfacl
+
+- Upgrade to Docker 17.12 and Docker Compose 1.23.0
+
 ## 17.06-3.14 (2018-09-07)
 
 - Updated Swarm Client version 3.14
