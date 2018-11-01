@@ -1,12 +1,12 @@
 FROM eeacms/jenkins-slave:3.14
 
-ENV DOCKER_VERSION=17.06.2 \
-    DOCKER_COMPOSE_VERSION=1.20.0 \
-    DOCKER_COMPOSE_MD5=80b6349a390ef3a58250f892fb0cb3c1 \
+ENV DOCKER_VERSION=17.12.1 \
+    DOCKER_COMPOSE_VERSION=1.23.0 \
+    DOCKER_COMPOSE_MD5=29d1fd19d5569607cc665437e5042bc5 \
     CLAIR_SCANNER_VERSION=v8
 
 RUN apt-get update \
- && apt-get install -y --no-install-recommends apt-transport-https ca-certificates software-properties-common \
+ && apt-get install -y --no-install-recommends apt-transport-https ca-certificates software-properties-common acl \
  && curl -fsSL https://download.docker.com/linux/debian/gpg | apt-key add - \
  && add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/debian $(lsb_release -cs) stable" \
  && apt-get update \
