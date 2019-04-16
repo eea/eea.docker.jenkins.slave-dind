@@ -1,5 +1,11 @@
 # Changelog
 
+## 17.12-3.15 (2019-04-16)
+
+- Updated Swarm Client version 3.15
+
+- Upgrade Docker Compose 1.24.0
+
 
 ## 17.12-3.14 (2018-11-01)
 
