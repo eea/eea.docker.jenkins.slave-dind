@@ -17,7 +17,7 @@ RUN apt-get update \
  && chmod +x /bin/docker-compose \
  && curl "https://bootstrap.pypa.io/get-pip.py" -o "/tmp/get-pip.py" \
  && python /tmp/get-pip.py \
- && pip install j2cli \
+ && pip install j2cli virtualenv \
  && curl -L -o /usr/bin/clair-scanner https://github.com/arminc/clair-scanner/releases/download/$CLAIR_SCANNER_VERSION/clair-scanner_linux_amd64 \
  && chmod 777 /usr/bin/clair-scanner
 
