@@ -1,5 +1,13 @@
 # Changelog
 
+## 17.12-3.16 (2019-05-29)
+
+- Updated Swarm Client version 3.16
+
+## 17.12-3.15.1 (2019-05-29)
+
+- Install Python virtualenv
+
 ## 17.12-3.15 (2019-04-16)
 
 - Updated Swarm Client version 3.15
