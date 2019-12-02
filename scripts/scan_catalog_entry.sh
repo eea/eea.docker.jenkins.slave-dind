@@ -45,7 +45,7 @@ fi
 echo "Found current rancher catalog entry for $RANCHER_CATALOG_PATH - $lastdir"
 echo "Will extract images, with the following regex exclusions: '$EXCLUDE_IMAGES'"
 
-all_images=$(grep image: $lastdir/docker-compose* |   cut -d: -f2,3  | sort | uniq  | grep -vE "$EXCLUDE_IMAGES" )
+all_images=$(grep '  image:' $lastdir/docker-compose* |   cut -d: -f2,3  | sort | uniq  | grep -vE "$EXCLUDE_IMAGES" )
 
 echo "Will start scanning the following images:"
 echo "$all_images"

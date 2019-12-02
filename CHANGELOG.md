@@ -1,5 +1,14 @@
 # Changelog
 
+## 17.12-3.17 (2019-12-02)
+
+- Updated Swarm Client version 3.17
+
+- Upgrade Docker Compose 1.25.0
+
+- Fix bug in script to scan latest rancher catalog entry
+
+
 ## 17.12-3.16 (2019-05-29)
 
 - Updated Swarm Client version 3.16
