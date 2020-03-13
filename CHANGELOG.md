@@ -1,5 +1,13 @@
 # Changelog
 
+
+## 3.18 (2020-03-13)
+
+- Upgrade to swarm-client 3.18
+
+- Upgrade Docker Compose 1.25.4
+
+
 ## 17.12-3.17 (2019-12-02)
 
 - Updated Swarm Client version 3.17
