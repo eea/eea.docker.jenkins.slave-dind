@@ -1,7 +1,12 @@
 # Changelog
 
 
-## 3.18 (2020-03-13)
+## 17.12-3.18.1 (2020-03-20)
+
+- Add rancher client v0.6.14
+
+
+## 17.12-3.18 (2020-03-13)
 
 - Upgrade to swarm-client 3.18
 
