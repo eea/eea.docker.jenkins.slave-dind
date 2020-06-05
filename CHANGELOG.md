@@ -1,6 +1,12 @@
 # Changelog
 
 
+## 17.12-3.21 (2020-06-05)
+
+- Upgrade to swarm-client 3.21
+- Add ENV variable `OPENSSL_CONF`
+
+
 ## 17.12-3.18.1 (2020-03-20)
 
 - Add rancher client v0.6.14

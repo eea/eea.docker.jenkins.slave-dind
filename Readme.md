@@ -9,6 +9,7 @@ This image is generic, thus you can obviously re-use it within your non-related 
 ## Supported tags and respective Dockerfile links
 
 - [`:latest`  (*Dockerfile*)](https://github.com/eea/eea.docker.jenkins.slave-dind/blob/master/Dockerfile)
+- [`:17.12-3.18.1` (*Dockerfile*)](https://github.com/eea/eea.docker.jenkins.slave-dind/blob/17.12-3.21/Dockerfile) - Docker 17.12.1-ce, Docker-Compose 1.25.4, Swarm Client 3.21
 - [`:17.12-3.18.1` (*Dockerfile*)](https://github.com/eea/eea.docker.jenkins.slave-dind/blob/17.12-3.18.1/Dockerfile) - Docker 17.12.1-ce, Docker-Compose 1.25.4, Swarm Client 3.18
 
 See [older versions](https://github.com/eea/eea.docker.jenkins.slave-dind/releases)
