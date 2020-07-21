@@ -1,5 +1,9 @@
 # Changelog
 
+## 17.12-3.22 (2020-07-06)
+
+- Upgrade to swarm-client 3.22
+- Add ENV variable `RUN_AS_ROOT`
 
 ## 17.12-3.21 (2020-06-05)
 
