@@ -1,5 +1,12 @@
 # Changelog
 
+## 19.03-3.23 (2020-10-16)
+
+- Upgrade docker to 19.03.13
+- Upgrade docker-compose to 1.27.4
+- Upgrade to swarm-client 3.23
+- Upgrade to gosu 1.12
+
 ## 17.12-3.22 (2020-07-06)
 
 - Upgrade to swarm-client 3.22
