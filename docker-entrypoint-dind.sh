@@ -16,7 +16,7 @@ if [ -n "$DOCKERHUB_USER" ] && [ -n "$DOCKERHUB_PASS" ]; then
   chown -R jenkins:jenkins /var/jenkins_home/worker/.docker
 fi
 
-#clean up workspace
-rm -rf /var/jenkins_home/worker/workspace/*
+#clean up workspace, delete files older than 1day
+find /var/jenkins_home/worker/workspace -maxdepth 1 -type d -ctime +1 -exec  rm -rf {} \;
 
 exec /docker-entrypoint.sh "$@"
