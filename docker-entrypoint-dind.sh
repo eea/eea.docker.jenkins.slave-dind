@@ -4,6 +4,9 @@ if [ -e /var/run/docker.sock ]; then
   setfacl -m u:1000:rw /var/run/docker.sock
 fi
 
+#clean up workspace, delete files older than 1day
+find /var/jenkins_home/worker/workspace -maxdepth 1 -type d -ctime +1 -exec  rm -rf {} \;
+
 if [ -n "$DOCKERHUB_USER" ] && [ -n "$DOCKERHUB_PASS" ]; then
   SETTINGS_TPL='/tmp/settings.xml.j2'
   SETTINGS_FILE=$HOME'/.m2/settings.xml'
@@ -16,7 +19,5 @@ if [ -n "$DOCKERHUB_USER" ] && [ -n "$DOCKERHUB_PASS" ]; then
   chown -R jenkins:jenkins /var/jenkins_home/worker/.docker
 fi
 
-#clean up workspace, delete files older than 1day
-find /var/jenkins_home/worker/workspace -maxdepth 1 -type d -ctime +1 -exec  rm -rf {} \;
 
 exec /docker-entrypoint.sh "$@"
