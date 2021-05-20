@@ -1,5 +1,10 @@
 # Changelog
 
+## 19.03-3.26 (2021-05-20)
+
+- Upgrade to swarm-client 3.26
+- Upgrade to docker-compose 1.29.2
+
 ## 19.03-3.25 (2021-03-17)
 
 - Upgrade to swarm-client 3.25
