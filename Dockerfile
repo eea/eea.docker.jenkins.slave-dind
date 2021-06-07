@@ -4,7 +4,9 @@ ENV DOCKER_VERSION=5:19.03.15 \
     DOCKER_COMPOSE_VERSION=1.29.2 \
     DOCKER_COMPOSE_MD5=8f68ae5d2334eecb0ee50b809b5cec58 \
     CLAIR_SCANNER_VERSION=v12 \
-    RANCHER_CLI_VERSION=v0.6.14
+    RANCHER_CLI_VERSION=v0.6.14 \
+    KUBE_VERSION=1.21.1 \
+    HELM_VERSION=3.6.0
 
 RUN apt-get update \
  && apt-get install -y --no-install-recommends apt-transport-https ca-certificates software-properties-common acl \
@@ -22,7 +24,14 @@ RUN apt-get update \
  && curl -L -o rancher-linux-amd64-${RANCHER_CLI_VERSION}.tar.gz https://releases.rancher.com/cli/${RANCHER_CLI_VERSION}/rancher-linux-amd64-${RANCHER_CLI_VERSION}.tar.gz \
  && tar -xzvf rancher-linux-amd64-${RANCHER_CLI_VERSION}.tar.gz  \
  && mv rancher-${RANCHER_CLI_VERSION}/rancher /usr/bin/rancher \
- && rm -rf rancher-*
+ && rm -rf rancher-* \
+ && wget -q https://storage.googleapis.com/kubernetes-release/release/v${KUBE_VERSION}/bin/linux/amd64/kubectl -O /usr/local/bin/kubectl \
+ && chmod +x /usr/local/bin/kubectl \
+ && wget -q https://get.helm.sh/helm-v${HELM_VERSION}-linux-amd64.tar.gz -O - | tar -xzO linux-amd64/helm > /usr/local/bin/helm \
+ && chmod +x /usr/local/bin/helm \
+ && helm repo add "stable" "https://charts.helm.sh/stable" --force-update
+    
+    
 
 COPY ini/settings.xml.j2 /tmp/settings.xml.j2
 COPY scripts/scan_catalog_entry.sh docker-entrypoint-dind.sh /
