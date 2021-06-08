@@ -1,5 +1,10 @@
 # Changelog
 
+## 19.03-3.26-1 (2021-06-08)
+
+- Add Kubectl 1.21.1
+- Add Helm 3.6.0
+
 ## 19.03-3.26 (2021-05-20)
 
 - Upgrade to swarm-client 3.26

@@ -10,9 +10,7 @@ This image is generic, thus you can obviously re-use it within your non-related 
 
 - [`:latest`  (*Dockerfile*)](https://github.com/eea/eea.docker.jenkins.slave-dind/blob/master/Dockerfile)
 - [`:19.03-3.26` (*Dockerfile*)](https://github.com/eea/eea.docker.jenkins.slave/blob/19.03-3.26/Dockerfile)
-- [`:19.03-3.25` (*Dockerfile*)](https://github.com/eea/eea.docker.jenkins.slave/blob/19.03-3.25/Dockerfile)
-- [`:17.12-3.22` (*Dockerfile*)](https://github.com/eea/eea.docker.jenkins.slave-dind/blob/17.12-3.22/Dockerfile) - Docker 17.12.1-ce, Docker-Compose 1.25.4, Swarm Client 3.22
-- [`:19.03-3.23` (*Dockerfile*)](https://github.com/eea/eea.docker.jenkins.slave-dind/blob/19.03-3.23/Dockerfile) - Docker 19.03.13-ce, Docker-Compose 1.27.4, Swarm Client 3.23
+- [`:19.03-3.26-1` (*Dockerfile*)](https://github.com/eea/eea.docker.jenkins.slave/blob/19.03-3.26-1/Dockerfile)
 
 See [older versions](https://github.com/eea/eea.docker.jenkins.slave-dind/releases)
 
