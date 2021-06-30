@@ -1,5 +1,9 @@
 # Changelog
 
+## 19.03-3.27 (2021-06-30)
+
+- Upgrade to swarm-client 3.27
+
 ## 19.03-3.26-1 (2021-06-08)
 
 - Add Kubectl 1.21.1
