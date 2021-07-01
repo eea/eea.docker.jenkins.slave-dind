@@ -4,6 +4,9 @@ if [ -e /var/run/docker.sock ]; then
   setfacl -m u:1000:rw /var/run/docker.sock
 fi
 
+#make sure jenkins has access in worker
+chown -v jenkins:jenkins /var/jenkins_home/worker
+
 #clean up workspace, delete files older than 1day
 find /var/jenkins_home/worker/workspace -maxdepth 1 -mindepth 1 -type d -mtime +1 -exec  rm -rf {} \; &
 
