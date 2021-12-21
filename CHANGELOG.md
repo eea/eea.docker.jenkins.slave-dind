@@ -1,5 +1,11 @@
 # Changelog
 
+## 20.10-3.29 (2021-12-21)
+
+- Upgrade to jdk 11
+- Upgrade to swarm-client 3.29
+- Upgrade to docker 5:20.10.12~3-0~debian-bullseye
+
 ## 19.03-3.27 (2021-06-30)
 
 - Upgrade to swarm-client 3.27
