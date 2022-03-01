@@ -1,4 +1,4 @@
-FROM eeacms/jenkins-slave:3.29
+FROM eeacms/jenkins-slave:3.30
 
 ENV DOCKER_VERSION=5:20.10.12~3-0~debian-bullseye \
     DOCKER_COMPOSE_VERSION=1.29.2 \
