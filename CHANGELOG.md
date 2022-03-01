@@ -1,5 +1,9 @@
 # Changelog
 
+## 20.10-3.30 (2022-03-01)
+
+- Upgrade to swarm-client 3.30
+
 ## 20.10-3.29 (2021-12-21)
 
 - Upgrade to jdk 11
