@@ -1,5 +1,10 @@
 # Changelog
 
+## 20.10-3.39 (2023-02-13)
+
+- Upgrade to swarm-client 3.39
+- Upgrade to docker 5:20.10.23~3-0~debian-bullseye
+
 ## 20.10-3.37 (2022-11-14)
 
 - Upgrade to swarm-client 3.37
