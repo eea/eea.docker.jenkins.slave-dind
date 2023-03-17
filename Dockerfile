@@ -6,7 +6,8 @@ ENV DOCKER_VERSION=5:20.10.23~3-0~debian-bullseye \
     CLAIR_SCANNER_VERSION=v12 \
     RANCHER_CLI_VERSION=v0.6.14 \
     KUBE_VERSION=1.21.1 \
-    HELM_VERSION=3.6.0
+    HELM_VERSION=3.6.0 \
+    BUILDX_VERSION=v0.10.4
 
 RUN apt-get update \
  && apt-get install -y --no-install-recommends apt-transport-https ca-certificates software-properties-common acl \
@@ -29,7 +30,13 @@ RUN apt-get update \
  && chmod +x /usr/local/bin/kubectl \
  && wget -q https://get.helm.sh/helm-v${HELM_VERSION}-linux-amd64.tar.gz -O - | tar -xzO linux-amd64/helm > /usr/local/bin/helm \
  && chmod +x /usr/local/bin/helm \
- && helm repo add "stable" "https://charts.helm.sh/stable" --force-update
+ && helm repo add "stable" "https://charts.helm.sh/stable" --force-update \
+## install buildx
+ && wget https://github.com/docker/buildx/releases/download/${BUILDX_VERSION}/buildx-${BUILDX_VERSION}.linux-amd64 \
+ && mkdir -p ~/.docker/cli-plugins \
+ && mv buildx-${BUILDX_VERSION}.linux-amd64  ~/.docker/cli-plugins/docker-buildx \
+ && chmod 755 ~/.docker/cli-plugins/docker-buildx \
+ && docker buildx install
     
     
 
