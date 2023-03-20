@@ -1,5 +1,10 @@
 # Changelog
 
+## 20.10-3.39-1 (2023-03-20)
+
+- Patch upgrade helm, kubectl
+- Add buildx and configure as default docker build 
+
 ## 20.10-3.39 (2023-02-13)
 
 - Upgrade to swarm-client 3.39
