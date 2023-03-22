@@ -30,13 +30,7 @@ RUN apt-get update \
  && chmod +x /usr/local/bin/kubectl \
  && wget -q https://get.helm.sh/helm-v${HELM_VERSION}-linux-amd64.tar.gz -O - | tar -xzO linux-amd64/helm > /usr/local/bin/helm \
  && chmod +x /usr/local/bin/helm \
- && helm repo add "stable" "https://charts.helm.sh/stable" --force-update \
-## install buildx
- && wget https://github.com/docker/buildx/releases/download/${BUILDX_VERSION}/buildx-${BUILDX_VERSION}.linux-amd64 \
- && mkdir -p ~/.docker/cli-plugins \
- && mv buildx-${BUILDX_VERSION}.linux-amd64  ~/.docker/cli-plugins/docker-buildx \
- && chmod 755 ~/.docker/cli-plugins/docker-buildx \
- && docker buildx install
+ && helm repo add "stable" "https://charts.helm.sh/stable" --force-update 
     
     
 
