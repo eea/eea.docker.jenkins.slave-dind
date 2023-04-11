@@ -1,5 +1,10 @@
 # Changelog
 
+## 20.10-3.40 (2023-04-11)
+
+- Upgrade to swarm-client 3.40
+- Upgrade to docker 5:20.10.24
+
 ## 20.10-3.39-1 (2023-03-20)
 
 - Patch upgrade helm, kubectl
