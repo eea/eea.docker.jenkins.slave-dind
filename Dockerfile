@@ -7,7 +7,7 @@ ENV DOCKER_VERSION= \
     KUBE_VERSION=1.21.14 \
     HELM_VERSION=3.6.3 \
     BUILDX_VERSION=v0.10.4 \
-    DOCKER_API_VERSION='1.44'
+    DOCKER_API_VERSION=1.40
 
 RUN apt-get update \
  && apt-get install -y --no-install-recommends gpg-agent apt-transport-https ca-certificates software-properties-common acl \
