@@ -10,9 +10,15 @@ ENV DOCKER_VERSION=5:20.10.24 \
     BUILDX_VERSION=v0.10.4
 
 RUN apt-get update \
- && apt-get install -y --no-install-recommends apt-transport-https ca-certificates software-properties-common acl \
- && curl -fsSL https://download.docker.com/linux/debian/gpg | apt-key add - \
- && add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/debian $(lsb_release -cs) stable" \
+ && apt-get install -y --no-install-recommends gpg-agent apt-transport-https ca-certificates software-properties-common acl \
+ && install -m 0755 -d /etc/apt/keyrings \
+ && curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc \
+ && chmod a+r /etc/apt/keyrings/docker.asc \
+ # Add the repository to Apt sources:
+ && echo \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
+  $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
+   tee /etc/apt/sources.list.d/docker.list > /dev/null \
  && apt-get update \
  && apt-get install -y --no-install-recommends docker-ce=$DOCKER_VERSION* \
  && rm -rf /var/lib/apt/lists/* \
