@@ -1,13 +1,13 @@
 FROM eeacms/jenkins-slave:3.47
 
-ENV DOCKER_VERSION=5:20.10.24 \
-    DOCKER_COMPOSE_VERSION=1.29.2 \
-    DOCKER_COMPOSE_MD5=8f68ae5d2334eecb0ee50b809b5cec58 \
-    CLAIR_SCANNER_VERSION=v12 \
+ENV DOCKER_VERSION=5:27.1.2 \
+    DOCKER_COMPOSE_VERSION=v2.29.1 \
+    DOCKER_COMPOSE_MD5=bb1c341cf694485ca9d80472e2f6e649 \
     RANCHER_CLI_VERSION=v0.6.14 \
     KUBE_VERSION=1.21.14 \
     HELM_VERSION=3.6.3 \
-    BUILDX_VERSION=v0.10.4
+    BUILDX_VERSION=v0.10.4 \
+    DOCKER_API_VERSION=1.40
 
 RUN apt-get update \
  && apt-get install -y --no-install-recommends gpg-agent apt-transport-https ca-certificates software-properties-common acl \
@@ -26,8 +26,6 @@ RUN apt-get update \
  && echo "$DOCKER_COMPOSE_MD5  /bin/docker-compose" | md5sum -c - \
  && chmod +x /bin/docker-compose \
  && pip install j2cli \
- && curl -L -o /usr/bin/clair-scanner https://github.com/arminc/clair-scanner/releases/download/$CLAIR_SCANNER_VERSION/clair-scanner_linux_amd64 \
- && chmod 777 /usr/bin/clair-scanner \
  && curl -L -o rancher-linux-amd64-${RANCHER_CLI_VERSION}.tar.gz https://releases.rancher.com/cli/${RANCHER_CLI_VERSION}/rancher-linux-amd64-${RANCHER_CLI_VERSION}.tar.gz \
  && tar -xzvf rancher-linux-amd64-${RANCHER_CLI_VERSION}.tar.gz  \
  && mv rancher-${RANCHER_CLI_VERSION}/rancher /usr/bin/rancher \
