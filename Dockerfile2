@@ -1,27 +1,26 @@
 FROM eeacms/jenkins-slave:3.47
 
-ENV DOCKER_VERSION= \
+ENV DOCKER_VERSION=5:20.10.24 \
     DOCKER_COMPOSE_VERSION=v2.29.1 \
-    DOCKER_COMPOSE_MD5=bb1c341cf694485ca9d80472e2f6e649 \
+    DOCKER_COMPOSE_MD5=5ea89dd65d33912a83737d8a4bf070d5de534a32b8493a21fbefc924484786a9 \
     RANCHER_CLI_VERSION=v0.6.14 \
     KUBE_VERSION=1.21.14 \
     HELM_VERSION=3.6.3 \
     BUILDX_VERSION=v0.10.4 \
-    DOCKER_API_VERSION='1.44'
+    DOCKER_API_VERSION='1.44' 
 
 RUN apt-get update \
  && apt-get install -y --no-install-recommends gpg-agent apt-transport-https ca-certificates software-properties-common acl \
  && install -m 0755 -d /etc/apt/keyrings \
- && curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc \
+ && curl -fsSL https://download.docker.com/linux/debian/gpg -o /etc/apt/keyrings/docker.asc \
  && chmod a+r /etc/apt/keyrings/docker.asc \
- # Add the repository to Apt sources:
+# Add the repository to Apt sources:
  && echo \
-  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/debian \
   $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
-   tee /etc/apt/sources.list.d/docker.list > /dev/null \
+  tee /etc/apt/sources.list.d/docker.list > /dev/null \
  && apt-get update \
- && apt-get install -y --no-install-recommends docker-ce \
-#docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin \
+ && apt-get install -y --no-install-recommends docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin \
  && rm -rf /var/lib/apt/lists/* \
  && curl -o /bin/docker-compose -SL https://github.com/docker/compose/releases/download/$DOCKER_COMPOSE_VERSION/docker-compose-Linux-x86_64 \
  && echo "$DOCKER_COMPOSE_MD5  /bin/docker-compose" | md5sum -c - \
@@ -44,3 +43,4 @@ COPY scripts/scan_catalog_entry.sh docker-entrypoint-dind.sh /
 
 ENTRYPOINT ["/docker-entrypoint-dind.sh"]
 CMD ["java", "-jar", "/bin/swarm-client.jar"]
+
