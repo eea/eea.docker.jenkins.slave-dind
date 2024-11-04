@@ -9,8 +9,8 @@ This image is generic, thus you can obviously re-use it within your non-related 
 ## Supported tags and respective Dockerfile links
 
 - [`:latest`  (*Dockerfile*)](https://github.com/eea/eea.docker.jenkins.slave-dind/blob/master/Dockerfile)
-- [`:27.1-3.47` (*Dockerfile*)](https://github.com/eea/eea.docker.jenkins.slave/blob/27.1-3.47/Dockerfile)
-- [`:20.10-3.47` (*Dockerfile*)](https://github.com/eea/eea.docker.jenkins.slave/blob/20.10-3.47/Dockerfile)
+- [`:27.1-3.48` (*Dockerfile*)](https://github.com/eea/eea.docker.jenkins.slave/blob/27.1-3.48/Dockerfile)
+- [`:27.1-3.48` (*Dockerfile*)](https://github.com/eea/eea.docker.jenkins.slave/blob/27.1-3.48/Dockerfile)
 
 See [older versions](https://github.com/eea/eea.docker.jenkins.slave-dind/releases)
 

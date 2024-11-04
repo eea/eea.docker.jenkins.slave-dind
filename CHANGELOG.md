@@ -1,5 +1,9 @@
 # Changelog
 
+## 27.1-3.48 (2024-11-04)
+
+- Upgrade to swarm-client 3.48
+
 ## 27.1-3.47 (2024-08-16)
 
 - Upgrade to docker 27.1.2
