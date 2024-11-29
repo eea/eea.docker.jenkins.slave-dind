@@ -1,5 +1,10 @@
 # Changelog
 
+## 27.3-3.48 (2024-11-29)
+
+- Upgrade to docker 5:27.3.1
+- Upgrade to docker-compose v2.31.0
+
 ## 27.1-3.48 (2024-11-04)
 
 - Upgrade to swarm-client 3.48
