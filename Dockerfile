@@ -5,9 +5,7 @@ ENV DOCKER_VERSION=5:28.1.1 \
     DOCKER_COMPOSE_MD5=578d96985b66af0aa5cce8abb25c79ad \
     RANCHER_CLI_VERSION=v0.6.14 \
     KUBE_VERSION=1.21.14 \
-    HELM_VERSION=3.6.3 \
-    BUILDX_VERSION=v0.10.4 \
-    DOCKER_API_VERSION=1.40
+    HELM_VERSION=3.6.3 
 
 RUN apt-get update \
  && apt-get install -y --no-install-recommends gpg-agent apt-transport-https ca-certificates software-properties-common acl \
