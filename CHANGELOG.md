@@ -1,9 +1,8 @@
 # Changelog
 
-## 28.5-3.51 (2025-10-30)
+## 28.1-3.51 (2025-10-30)
 
 - Upgrade to swarm-client 3.51
-- Upgrade to docker 5:28.5.1
 - Upgrade to docker-compose v2.40.2
 
 ## 28.1-3.49 (2025-05-28)

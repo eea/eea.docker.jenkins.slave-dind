@@ -9,7 +9,7 @@ This image is generic, thus you can obviously re-use it within your non-related 
 ## Supported tags and respective Dockerfile links
 
 - [`:latest`  (*Dockerfile*)](https://github.com/eea/eea.docker.jenkins.slave-dind/blob/master/Dockerfile)
-- [`:28.5-3.51` (*Dockerfile*)](https://github.com/eea/eea.docker.jenkins.slave/blob/28.5-3.51/Dockerfile)
+- [`:28.1-3.51` (*Dockerfile*)](https://github.com/eea/eea.docker.jenkins.slave/blob/28.5-3.51/Dockerfile)
 
 See [older versions](https://github.com/eea/eea.docker.jenkins.slave-dind/releases)
 
