@@ -1,5 +1,9 @@
 # Changelog
 
+## 28.1-3.51-1 (2026-01-09)
+
+- Fix error messages, add sonar as maven plugin
+
 ## 28.1-3.51 (2025-10-30)
 
 - Upgrade to swarm-client 3.51
