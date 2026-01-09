@@ -7,8 +7,10 @@ fi
 #make sure jenkins has access in worker
 chown -v jenkins:jenkins /var/jenkins_home/worker
 
-#clean up workspace, delete files older than 1day
-find /var/jenkins_home/worker/workspace -maxdepth 1 -mindepth 1 -type d -mtime +1 -exec  rm -rf {} \; &
+if [ -d  /var/jenkins_home/worker/workspace ]; then
+  #clean up workspace, delete files older than 1day
+  find /var/jenkins_home/worker/workspace -maxdepth 1 -mindepth 1 -type d -mtime +1 -exec  rm -rf {} \; &
+fi
 
 if [ -n "$DOCKERHUB_USER" ] && [ -n "$DOCKERHUB_PASS" ]; then
   SETTINGS_TPL='/tmp/settings.xml.j2'
