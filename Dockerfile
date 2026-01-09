@@ -35,6 +35,7 @@ RUN apt-get update \
  && helm repo add "stable" "https://charts.helm.sh/stable" --force-update 
     
     
+USER ROOT
 
 COPY ini/settings.xml.j2 /tmp/settings.xml.j2
 COPY scripts/scan_catalog_entry.sh docker-entrypoint-dind.sh /
