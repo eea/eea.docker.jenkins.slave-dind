@@ -15,8 +15,8 @@ if [ -n "$DOCKERHUB_USER" ] && [ -n "$DOCKERHUB_PASS" ]; then
   SETTINGS_FILE=$HOME'/.m2/settings.xml'
   find /var/jenkins_home/worker/workspace -maxdepth 1  -type d -mtime -1 -exec  chown -v jenkins:jenkins  {} \; 
   find /var/jenkins_home/worker/workspace -maxdepth 1 -mindepth 1 -type d -mtime -0.2 -exec  chown -R jenkins:jenkins  {} \; &
-  gosu jenkins mkdir $HOME/.m2
-  gosu jenkins j2 "$SETTINGS_TPL" > $SETTINGS_FILE
+  mkdir $HOME/.m2
+  j2 "$SETTINGS_TPL" > $SETTINGS_FILE
   docker login -u $DOCKERHUB_USER -p $DOCKERHUB_PASS
   mkdir -p /var/jenkins_home/worker/.docker
   cp /root/.docker/config.json /var/jenkins_home/worker/.docker/config.json
