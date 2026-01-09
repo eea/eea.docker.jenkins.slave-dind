@@ -10,13 +10,13 @@ chown -v jenkins:jenkins /var/jenkins_home/worker
 if [ -d  /var/jenkins_home/worker/workspace ]; then
   #clean up workspace, delete files older than 1day
   find /var/jenkins_home/worker/workspace -maxdepth 1 -mindepth 1 -type d -mtime +1 -exec  rm -rf {} \; &
+  find /var/jenkins_home/worker/workspace -maxdepth 1  -type d -mtime -1 -exec  chown -v jenkins:jenkins  {} \; 
+  find /var/jenkins_home/worker/workspace -maxdepth 1 -mindepth 1 -type d -mtime -0.2 -exec  chown -R jenkins:jenkins  {} \; &
 fi
 
 if [ -n "$DOCKERHUB_USER" ] && [ -n "$DOCKERHUB_PASS" ]; then
   SETTINGS_TPL='/tmp/settings.xml.j2'
   SETTINGS_FILE=$HOME'/.m2/settings.xml'
-  find /var/jenkins_home/worker/workspace -maxdepth 1  -type d -mtime -1 -exec  chown -v jenkins:jenkins  {} \; 
-  find /var/jenkins_home/worker/workspace -maxdepth 1 -mindepth 1 -type d -mtime -0.2 -exec  chown -R jenkins:jenkins  {} \; &
   mkdir -p $HOME/.m2
   j2 "$SETTINGS_TPL" > $SETTINGS_FILE
   docker login -u $DOCKERHUB_USER -p $DOCKERHUB_PASS
