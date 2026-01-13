@@ -1,5 +1,9 @@
 # Changelog
 
+## 28.1-3.51-2 (2026-01-13)
+
+- Upgrade to java 21, OS noble
+
 ## 28.1-3.51-1 (2026-01-09)
 
 - Fix error messages, add sonar as maven plugin
