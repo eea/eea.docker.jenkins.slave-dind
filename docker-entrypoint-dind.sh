@@ -18,7 +18,7 @@ if [ -n "$DOCKERHUB_USER" ] && [ -n "$DOCKERHUB_PASS" ]; then
   SETTINGS_TPL='/tmp/settings.xml.j2'
   SETTINGS_FILE=$HOME'/.m2/settings.xml'
   mkdir -p $HOME/.m2
-  j2 "$SETTINGS_TPL" > $SETTINGS_FILE
+  sed "s/{{ DOCKERHUB_USER }}/$DOCKERHUB_USER/" "$SETTINGS_TPL" | sed "s/{{ DOCKERHUB_PASS }}/$DOCKERHUB_PASS/" > $SETTINGS_FILE
   docker login -u $DOCKERHUB_USER -p $DOCKERHUB_PASS
   mkdir -p /var/jenkins_home/worker/.docker
   cp /root/.docker/config.json /var/jenkins_home/worker/.docker/config.json
