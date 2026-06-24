@@ -18,11 +18,12 @@ RUN apt-get update \
   $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
    tee /etc/apt/sources.list.d/docker.list > /dev/null \
  && apt-get update \
- && apt-get install -y --no-install-recommends docker-ce=$DOCKER_VERSION* \
+ && apt-get install -y --no-install-recommends docker-ce=$DOCKER_VERSION* docker-buildx-plugin \
  && rm -rf /var/lib/apt/lists/* \
  && curl -o /bin/docker-compose -SL https://github.com/docker/compose/releases/download/$DOCKER_COMPOSE_VERSION/docker-compose-Linux-x86_64 \
  && echo "$DOCKER_COMPOSE_MD5  /bin/docker-compose" | md5sum -c - \
  && chmod +x /bin/docker-compose \
+ && docker buildx create   --name multiarch-builder   --driver docker-container \
  && curl -L -o rancher-linux-amd64-${RANCHER_CLI_VERSION}.tar.gz https://releases.rancher.com/cli/${RANCHER_CLI_VERSION}/rancher-linux-amd64-${RANCHER_CLI_VERSION}.tar.gz \
  && tar -xzvf rancher-linux-amd64-${RANCHER_CLI_VERSION}.tar.gz  \
  && mv rancher-${RANCHER_CLI_VERSION}/rancher /usr/bin/rancher \
@@ -31,7 +32,7 @@ RUN apt-get update \
  && chmod +x /usr/local/bin/kubectl \
  && wget -q https://get.helm.sh/helm-v${HELM_VERSION}-linux-amd64.tar.gz -O - | tar -xzO linux-amd64/helm > /usr/local/bin/helm \
  && chmod +x /usr/local/bin/helm \
- && helm repo add "stable" "https://charts.helm.sh/stable" --force-update 
+ && helm repo add "stable" "https://charts.helm.sh/stable" --force-update
     
     
 USER ROOT
