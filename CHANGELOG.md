@@ -1,5 +1,11 @@
 # Changelog
 
+## 29.6-1254 (2026-06-25)
+
+- Upgrade to swarm-client 1254.vf26a_5e188f26
+- Upgrade to docker 5:29.6.0
+- Upgrade to docker-compose v2.40.3
+
 ## 28.1-3.51-2 (2026-01-13)
 
 - Upgrade to java 21, OS noble
