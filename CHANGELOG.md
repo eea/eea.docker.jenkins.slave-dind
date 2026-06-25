@@ -5,6 +5,7 @@
 - Upgrade to swarm-client 1254.vf26a_5e188f26
 - Upgrade to docker 5:29.6.0
 - Upgrade to docker-compose v2.40.3
+- Add docker buildx plugin and configure multiarch-builder
 
 ## 28.1-3.51-2 (2026-01-13)
 
