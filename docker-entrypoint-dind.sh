@@ -26,4 +26,9 @@ if [ -n "$DOCKERHUB_USER" ] && [ -n "$DOCKERHUB_PASS" ]; then
 fi
 
 
+# create builder if does not exist
+if [ $(docker buildx ls | grep multiarch) -eq 0 ]; then
+	docker buildx create   --name multiarch-builder   --driver docker-container
+fi
+
 exec /docker-entrypoint.sh "$@"
