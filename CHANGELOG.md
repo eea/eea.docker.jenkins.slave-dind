@@ -1,5 +1,10 @@
 # Changelog
 
+
+## 29.6.1-1254 (2026-06-29)
+
+- Upgrade to docker 5:29.6.1
+
 ## 29.6-1254 (2026-06-25)
 
 - Upgrade to swarm-client 1254.vf26a_5e188f26
