@@ -18,7 +18,7 @@ RUN apt-get update \
   $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
    tee /etc/apt/sources.list.d/docker.list > /dev/null \
  && apt-get update \
- && apt-get install -y --no-install-recommends docker-ce=$DOCKER_VERSION* \
+ && apt-get install -y --no-install-recommends docker-ce=$DOCKER_VERSION* docker-buildx-plugin \
  && rm -rf /var/lib/apt/lists/* \
  && curl -o /bin/docker-compose -SL https://github.com/docker/compose/releases/download/$DOCKER_COMPOSE_VERSION/docker-compose-Linux-x86_64 \
  && echo "$DOCKER_COMPOSE_MD5  /bin/docker-compose" | md5sum -c - \
