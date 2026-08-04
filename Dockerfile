@@ -1,4 +1,4 @@
-FROM eeacms/jenkins-slave:1254
+FROM eeacms/jenkins-slave:1254-1
 
 ENV DOCKER_VERSION=5:29.6.1 \
     DOCKER_COMPOSE_VERSION=v2.40.3 \
