@@ -39,5 +39,5 @@ USER ROOT
 COPY ini/settings.xml.j2 /tmp/settings.xml.j2
 COPY scripts/scan_catalog_entry.sh docker-entrypoint-dind.sh /
 
-ENTRYPOINT ["/docker-entrypoint-dind.sh"]
+ENTRYPOINT ["tini", "--", "/docker-entrypoint-dind.sh"]
 CMD ["java", "-jar", "/bin/swarm-client.jar"]

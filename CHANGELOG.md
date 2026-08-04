@@ -1,5 +1,9 @@
 # Changelog
 
+## 29.6.1-1254-1 (2026-08-04)
+
+- Install and use tini to start
+
 
 ## 29.6.1-1254 (2026-06-29)
 
